@@ -1,0 +1,19 @@
+{
+  "name": "anthony-cv",
+  "version": "1.0.0",
+  "description": "cv en ligne",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyBerrue/anthony-cv.git"
+  },
+  "author": " <berrue.anthony@gmail.com> (Anthony <berrue.anthony@gmail.com> (https://anthonyberrué.fr)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyBerrue/anthony-cv/issues"
+  },
+  "homepage": "https://github.com/AnthonyBerrue/anthony-cv#readme"
+}
