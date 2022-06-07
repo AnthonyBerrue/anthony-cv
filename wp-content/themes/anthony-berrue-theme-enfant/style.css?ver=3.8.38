@@ -1,0 +1,132 @@
+/*
+Theme Name: anthony-berrue-theme-enfant
+Description: ThÃ¨me enfant
+Author: Anthony Berrue
+Template: anthony-berrue-theme
+*/
+
+@import url("../anthony-berrue-theme/style.css");
+
+/*modifications anthony*/
+.background-fix{
+
+}
+.slide-web-free li{ list-style-type: none;}
+.slide-web-free li a{color: #5E5E5E;}
+.slide-web-free li a:hover{text-decoration: underline;}
+.appel-moi p{font-weight: 600;
+font-size: 32px;
+color: #EE6557;}
+#main-content h3 {color: #EE6557;}
+.background-fix .et_pb_row{padding: 0;}
+.background-fix .et_pb_text {margin: 0;}
+.background-fix .et_pb_promo{margin-bottom: 0;}
+.background-fix h1{font-size: 40px;
+font-weight: bold;}
+.background-fix {
+padding: 60px 0px 50px 0px;
+}
+.vers-cv{padding: 60px 40px 60px 40px !important;}
+.slide-web-free {padding: 40px 60px 20px 60px;}
+.et_pb_promo_button:hover{background-color: rgba(0, 0, 0, 0.55);
+}
+#top-menu a:hover {
+color: #EE6557;
+}
+.en-savoir-plus-button{padding: 0;
+margin: 0;}
+
+
+.realisation-box .et_pb_promo{padding: 0;}
+.realisation-box .et_pb_promo_description{padding: 0;}
+.realisation-box .et_pb_row img:hover{opacity:0.9;}
+.et_pb_bg_layout_light .et_pb_promo_button:hover{background-color: rgba(130, 192, 199, 0.8);
+}
+h2 {color: #EE6557;
+font-weight: 600;
+font-size: 28px;}
+.fonttitle-18px p{font-size: 18px;}
+.visite-mediacocktail-link.et_pb_promo{padding:0px !important;}
+.counter-present span {font-size:18px;}
+.counter-present .et_pb_counter_title{ position: absolute;
+z-index: 50;
+color: #fff;
+margin-left: 10px;}
+.et-animated li span .et_pb_counter_amount {max-width: 100%;}
+.me-suivre p {color: #fff;
+padding-bottom: 0px;
+display: inline-block;
+width: 100%;
+margin-top: 5px;}
+.me-suivre span {color:#fff;font-size: 22px;
+vertical-align: text-top;
+display: inline-block;
+margin-top: 9px;}
+.me-suivre a {color:#fff;}
+.me-suivre a:hover {opacity: 0.8;}
+.me-suivre a:hover img {opacity: 0.8;}
+#sidebar .et_project_meta {
+margin: 23px 0 14px;
+border-top: 1px solid #e2e2e2;
+padding: 15px 0 39px 15px;
+border-bottom: 0px solid #e2e2e2;
+}
+.pagination.clearfix a {
+color: #17a6b7 !important;
+}
+.nav-single a {
+color: #17a6b7 !important;
+}
+.single .wp-caption{display: inline-block;}
+/*page cv*/
+.pagecv{font-family:arial;}
+.pagecv p{line-height: 20px;}
+.cvnum{color: #EE6557;
+line-height: 25px;
+font-size: 20px;
+font-weight: normal;
+font-family: arial;}
+.cvmail{color: #17a6b7;
+line-height: 40px;
+font-size: 20px;
+font-family: arial;}
+.cvadress{line-height: 25px;
+font-size: 18px;
+font-family: arial;}
+.cvinfo{line-height: 40px;
+font-size: 20px;
+font-family: arial;}
+.cvtitrebleu{color: #17a6b7;
+font-size: 28px;}
+.cvtitreorange{color: #EE6557;
+font-size: 28px;}
+.cvdate{color: #3e3e3e;
+font-size: 18px;}
+.cvsoustitre{color: #3e3e3e;
+font-size: 20px;
+font-weight: bold;}
+.cvtext1{line-height: 12px;}
+.cvtext2{line-height: 12px;
+color: #b5b5b5;}
+.cvsoustitre2{font-weight: bold;
+color: #3e3e3e;}
+
+.pagecv .cvtext4{padding-left:16px;}
+.cvsep {margin: 0;
+padding: 0;}
+.cvsep .et_pb_promo_description{padding: 10px 0;}
+.cvsep .et_pb_promo_description h3{padding-bottom: 0;}
+.cvdomaine{margin: 0;}
+.cvdomaine h2{padding: 10px 0;}
+.cvdomaine .cvbleu{color: #17a6b7;}
+.cvdivinfo{margin: 0;}
+.telcv img:hover {opacity:0.8;}
+/*/page cv*/
+
+.introp{
+padding: 15px 60px !important;
+}
+.pagecv h2{
+    padding: 5px 0px;
+}
+/*/modifications anthony*/
