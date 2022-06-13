@@ -1,0 +1,38 @@
+################################################################################
+# Fichier de test des routes HTTP de l'API
+################################################################################
+@endpoint = http://localhost:{{$dotenv PORT}}
+
+### Api-Doc
+GET {{ endpoint }}/api
+
+### Website homepage
+GET {{ endpoint }}/
+
+### page CV
+GET {{ endpoint }}/cv-developpeur
+
+### Page portfolio
+GET {{ endpoint }}/portfolio
+
+### Page contact
+GET {{ endpoint }}/contact
+
+
+### Page mentions legales
+GET  {{ endpoint }}/mentions-legales
+
+### Créer contact
+POST {{ endpoint }}/contact
+content-type: application/json
+
+{
+    "slug": "test-d-article",
+    "title": "test d'article",
+    "excerpt": "extrait de l'article de test",
+    "content": "contenu de l'article de test",
+    "category_id": 1
+}
+
+### 404
+GET {{ endpoint }}/404
