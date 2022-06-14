@@ -5,7 +5,7 @@ Author: Anthony Berrue
 Template: anthony-berrue-theme
 */
 
-@import url("style.css");
+@import url("../css/style.css");
 
 /*modifications anthony*/
 .background-fix{

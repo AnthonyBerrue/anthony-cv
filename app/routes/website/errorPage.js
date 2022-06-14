@@ -11,12 +11,12 @@ const router = express.Router();
 
 router
 
-    .route('/')
+    .route('*')
     /**
-     * GET /mentions-legales
-     * @summary Get mentions-legales
-     * @tags mentions-legales
-     * @return {[mentions-legales]} 200 - success response - application/json
+     * GET /cv-developpeur
+     * @summary Get cv-developpeur
+     * @tags cv
+     * @return {[cv-developpeur]} 200 - success response - application/json
      */
     .get(cache.route({
         expire: {
@@ -26,6 +26,6 @@ router
           '5xx': 10,
           xxx: 1
         }
-      }), controllerHandler(websiteController.mentionsLegales));
+      }), controllerHandler(websiteController.errorPage));
     
 module.exports = router;

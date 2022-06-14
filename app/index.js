@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -11,7 +11,7 @@ require('./helpers/apiDocs')(app);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.set('views', __dirname + '/views'); 
+app.set('views', `${process.cwd()}/app/views`); 
 
 app.use("/public", express.static('./public/'));
 

@@ -31,7 +31,7 @@
          message = 'Internal Server Error';
      }
  
-     if (err instanceof WebsiteError || err.code?.substr(0, 3) === 'html' || err.view) {
+     if (err instanceof WebsiteError || err.code?.substr(0, 3) === 'PUG' || err.view) {
          res.status(statusCode).render('error', {
              statusCode,
              message,

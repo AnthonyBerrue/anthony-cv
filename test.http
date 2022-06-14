@@ -35,4 +35,4 @@ content-type: application/json
 }
 
 ### 404
-GET {{ endpoint }}/404
+GET {{ endpoint }}/404vhhgfhg

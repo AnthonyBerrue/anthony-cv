@@ -1,3 +1,4 @@
+
 const websiteController = {
     /**
      * Home controller which display documentation link.
@@ -7,23 +8,27 @@ const websiteController = {
      * @returns {string} Route API JSON response
      */
     homePage(_, res) {
-        res.render('homepage.html');
+        res.render('homepage'); 
     },
-    
+
     cvDeveloppeur(_, res) {
-        res.render('cv-developpeur.html');
+        res.render('cv-developpeur');
     },
 
     portfolio(_, res) {
-        res.render('portfolio.html');
+        res.render('portfolio');
     },
 
     contact(_, res) {
-        res.render('contact.html');
+        res.render('contact');
     },
 
     mentionsLegales(_, res) {
-        res.render('mentions-legales.html');
+        res.render('mentions-legales');
+    },
+
+    errorPage(_, res) {
+        res.render('404');
     },
 
 };
