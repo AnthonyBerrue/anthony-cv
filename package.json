@@ -4,7 +4,7 @@
   "description": "cv en ligne",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
+    "start": "DEBUG=* node index.js",
     "dev": "DEBUG=*,-express:*,-nodemon*,-body-parser:* npx nodemon"
   },
   "repository": {
