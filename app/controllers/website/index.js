@@ -57,7 +57,7 @@ const websiteController = {
       // Nodemailer
 
     let transporter = nodemailer.createTransport({
-      host: 'hotmail',
+      host: 'smtp.live.com',
       /*port: 465,
       secure: true,
       tls: {
@@ -81,7 +81,7 @@ const websiteController = {
 
     // send box
     let info = transporter.sendMail({
-      from: email, // sender address
+      from: process.env.MAIL_USER, // sender address
       to: process.env.MAIL_USER, // list of receivers
       subject: sujet, // Subject line
       text: message, // plain text body
