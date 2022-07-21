@@ -28,7 +28,7 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - contact not found - application/json
      */
-    .post(cache.del(), controllerHandler(websiteController.nodeMailer));
+    .post(controllerHandler(websiteController.nodeMailer));
 
   
     
