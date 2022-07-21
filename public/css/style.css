@@ -48,7 +48,7 @@ article, aside, footer, header, hgroup, nav, section { display: block; }
 	font-family: 'ETmodules';
 	src:url('fonts/ETmodules.eot');
 	src:url('fonts/ETmodules.eot?#iefix') format('embedded-opentype'),
-		url('http://localhost:3000/public/fonts/ETmodules.ttf') format('truetype'),
+		url('http://anthonyberrue.herokuapp.com/public/fonts/ETmodules.ttf') format('truetype'),
 		url('fonts/ETmodules.woff') format('woff'),
 		url('fonts/ETmodules.svg#ETmodules') format('svg');
 	font-weight: normal;
