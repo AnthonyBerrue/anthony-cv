@@ -1,8 +1,9 @@
 const { promisify } = require('util');
 const cache = require('express-redis-cache')({
-    url: process.env.REDIS_URL,
     auth_pass: process.env.REDIS_PASSWORD,
     prefix: process.env.REDIS_PREFIX,
+    host:process.env.REDIS_HOST,
+    port:process.env.REDIS_PORT,
     no_ready_check: true,
     type: 'text/plain',
     expire : 10,
