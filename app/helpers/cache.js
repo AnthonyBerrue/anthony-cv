@@ -1,13 +1,39 @@
 const { promisify } = require('util');
 const cache = require('express-redis-cache')({
+    url: process.env.REDIS_URL,
     auth_pass: process.env.REDIS_PASSWORD,
     prefix: process.env.REDIS_PREFIX,
+    no_ready_check: true,
+    type: 'text/plain',
+    expire : 10,
+    socket: {
+        tls: true,
+        rejectUnauthorized: false
+      }
     
 });
 const debug = require('debug')('app:cache');
 
 cache.on('error', (error) => {
     console.error(error);
+});
+
+cache.on('deprecated', function (deprecated) {
+    debug('deprecated warning', {
+        type: deprecated.type,
+        name: deprecated.name,
+        substitute: deprecated.substitute,
+        file: deprecated.file,
+        line: deprecated.line
+    });
+});
+
+cache.on('connected', function (connected) {
+    debug(connected);
+});
+
+cache.on('disconnected', function (disconnected) {
+    debug(disconnected);
 });
 
 cache.on('message', (message) => {

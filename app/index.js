@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const router = require('./routes');
 
 const app = express();
+
 require('./helpers/apiDocs')(app);
 
 app.engine('html', require('ejs').renderFile);

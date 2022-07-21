@@ -23,16 +23,15 @@ GET {{ endpoint }}/contact
 GET  {{ endpoint }}/mentions-legales
 
 ### Créer contact
-POST {{ endpoint }}/contact
+POST {{ endpoint }}/mail
 content-type: application/json
 
 {
-    "slug": "test-d-article",
-    "title": "test d'article",
-    "excerpt": "extrait de l'article de test",
-    "content": "contenu de l'article de test",
-    "category_id": 1
+    "name": "polo",
+    "email":"django49000@gmail.com",
+    "message":"hello"
 }
+
 
 ### 404
 GET {{ endpoint }}/404vhhgfhg

@@ -18,14 +18,18 @@ router
      * @tags contact
      * @return {[contact]} 200 - success response - application/json
      */
-    .get(cache.route({
-        expire: {
-          200: 5000,
-          '4xx': 10,
-          403: 5000,
-          '5xx': 10,
-          xxx: 1
-        }
-      }), controllerHandler(websiteController.contact));
+    .get(cache.route(), controllerHandler(websiteController.contact))
+     /**
+     * POST /contact
+     * @summary Create a contact
+     * @tags Category
+     * @param {InputContact} request.body.required - contact info
+     * @return {contact} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - contact not found - application/json
+     */
+    .post(cache.del(), controllerHandler(websiteController.nodeMailer));
+
+  
     
 module.exports = router;

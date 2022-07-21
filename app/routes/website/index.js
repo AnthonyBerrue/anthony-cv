@@ -27,7 +27,6 @@ router.use('/contact', contactRouter);
 router.use('/mentions-legales', mentionsLegalesRouter);
 router.use('*', errorPageRouter);
 
-
 router.use(() => {
     throw new WebsiteError(404, 'Page introuvable');
 });
