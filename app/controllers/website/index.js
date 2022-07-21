@@ -56,14 +56,22 @@ const websiteController = {
 
       // Nodemailer
 
-    let transporter = nodemailer.createTransport({
-      host: 'smtp.live.com',
+    let transporter = nodemailer.createTransport("stmp", {
+      
+      host: 'smtp.office365.com',
+      secureConnection : false,
+      port : 587,
+      tls: {
+        ciphers:'STARTTLS'
+     },
+    
       /*port: 465,
       secure: true,
       tls: {
         rejectUnauthorized: true,
         minVersion: "TLSv1.2"
-      },*/
+      },
+      service : 'hotmail',*/
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASSWORD,
@@ -74,7 +82,7 @@ const websiteController = {
       name,
       emails,
       messages,
-      email,
+      //email,
       sujet,
       message
     } = req.body;
