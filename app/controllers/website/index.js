@@ -35,10 +35,11 @@ const websiteController = {
 
   // nodemailer.  
   nodeMailer(req, res) {
-     // g-recaptcha-response is the key that browser will generate upon form submit.
+    // g-recaptcha-response is the key that browser will generate upon form submit.
     // if its blank or null means user has not selected the captcha, so return the error.
     if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-      return res.json({"responseError" : "something goes to wrong"
+      return res.json({
+        "responseError": "something goes to wrong"
       });
     }
     // Put your secret key here.
@@ -50,64 +51,53 @@ const websiteController = {
       body = JSON.parse(body);
       // Success will be true or false depending upon captcha validation.
       if (body.success !== undefined && !body.success) {
-        return res.json({"responseError" : "Failed captcha verification"
+        return res.json({
+          "responseError": "Failed captcha verification"
         });
       }
 
       // Nodemailer
 
-    let transporter = nodemailer.createTransport("stmp", {
-      /*
-      host: 'smtp.office365.com',
-      secureConnection : false,
-      port : 587,
-      tls: {
-        ciphers:'SSLv3'
-     },
-    
-      port: 465,
-      secure: true,
-      tls: {
-        rejectUnauthorized: true,
-        minVersion: "TLSv1.2"
-      },*/
-      service : 'hotmail',
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASSWORD,
-      }
-    });
+      let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // use SSL
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.PASSWORD,
+        }
+      });
 
-    const {
-      name,
-      emails,
-      messages,
-      //email,
-      sujet,
-      message
-    } = req.body;
+      const {
+        name,
+        emails,
+        messages,
+        //email,
+        sujet,
+        message
+      } = req.body;
 
-    // send box
-    let info = transporter.sendMail({
-      from: process.env.MAIL_USER, // sender address
-      to: process.env.MAIL_USER, // list of receivers
-      subject: sujet, // Subject line
-      text: message, // plain text body
-      html: `<h1><strong>Anthony</strong> vous venez de recevoir un message de :</h1>
+      // send box
+      let info = transporter.sendMail({
+        from: process.env.GMAIL_USER, // sender address
+        to: process.env.GMAIL_USER, // list of receivers
+        subject: sujet, // Subject line
+        text: message, // plain text body
+        html: `<h1><strong>Anthony</strong> vous venez de recevoir un message de :</h1>
         <ul>
         <li><strong>Nom Prénom</strong> : ${name}</li>
         <li><strong>Email</strong> : ${emails}</li>
         <li><strong>Message</strong>: ${messages}</li>
         </ul>`, // html body
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+      res.render('contact');
+
+      console.log(error || response);
     });
-
-    console.log("Message sent: %s", info.messageId);
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
-    res.render('contact');
-   
-    console.log(error || response);
-  });
 
   },
 
