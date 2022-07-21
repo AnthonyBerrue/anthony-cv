@@ -57,16 +57,16 @@ const websiteController = {
       // Nodemailer
 
     let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
+      host: 'hotmail',
+      /*port: 465,
       secure: true,
       tls: {
         rejectUnauthorized: true,
         minVersion: "TLSv1.2"
-      },
+      },*/
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.PASSWORD,
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASSWORD,
       }
     });
 
@@ -82,7 +82,7 @@ const websiteController = {
     // send box
     let info = transporter.sendMail({
       from: email, // sender address
-      to: process.env.GMAIL_USER, // list of receivers
+      to: process.env.MAIL_USER, // list of receivers
       subject: sujet, // Subject line
       text: message, // plain text body
       html: `<h1><strong>Anthony</strong> vous venez de recevoir un message de :</h1>
@@ -97,7 +97,8 @@ const websiteController = {
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
     res.render('contact');
-
+   
+    console.log(error || response);
   });
 
   },
