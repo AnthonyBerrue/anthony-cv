@@ -11,4 +11,4 @@ npm run dev
 npm run build  # => ./out
 
 ## Déploiement
-Déployé via GitHub Actions sur: https://anthonyberrue.github.io/anthony-cv
+Déployé via GitHub Actions sur: https://anthonyberrue.github.io/anthony-cv.
