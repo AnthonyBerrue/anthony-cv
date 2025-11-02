@@ -1,43 +1,28 @@
 {
   "name": "anthony-cv",
-  "version": "1.0.0",
-  "description": "cv en ligne",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "DEBUG=* node index.js",
-    "dev": "DEBUG=*,-express:*,-nodemon*,-body-parser:* npx nodemon"
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "eslint",
+    "check:json": "node -e \"const fs=require('fs');['src/content/resume.fr.json','src/content/resume.en.json'].forEach(p=>JSON.parse(fs.readFileSync(p,'utf8')));console.log('✓ JSON OK')\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AnthonyBerrue/anthony-cv.git"
-  },
-  "author": " <berrue.anthony@gmail.com> (Anthony <berrue.anthony@gmail.com> (https://anthonyberrué.fr)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AnthonyBerrue/anthony-cv/issues"
-  },
-  "homepage": "https://github.com/AnthonyBerrue/anthony-cv#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "body-parser": "^1.20.0",
-    "bunyan": "^1.8.15",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "debug": "^4.3.4",
-    "dotenv": "^16.0.1",
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "express-jsdoc-swagger": "^1.6.8",
-    "express-redis-cache": "^1.1.3",
-    "googleapis": "^103.0.0",
-    "hogan.js": "^3.0.2",
-    "joi": "^17.6.0",
-    "mustache": "^4.2.0",
-    "nodemailer": "^6.7.5",
-    "pg": "^8.7.3",
-    "request": "^2.88.2"
+    "framer-motion": "^12.23.24",
+    "next": "16.0.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
-  "engines": {
-    "node": "16.13.2"
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

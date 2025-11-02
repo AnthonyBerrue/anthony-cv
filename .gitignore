@@ -1,6 +1,4 @@
-.idea
-
-# OS X
+# macOS
 **/.DS_Store*
 **/Icon?
 **/._*
@@ -14,18 +12,178 @@
 **/.directory
 **/*~
 
-# npm
-node_modules
-package-lock.json
-*.gz
+# IDE / éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
 
-#log
+# ------------------------------
+# Node / JS / Build tools
+# ------------------------------
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.bun
+.bunrc
+
+# Build / output directories
+dist/
+build/
+out/
+.next/
+.vercel/
+.astro/
+.cache/
+coverage/
+tmp/
+temp/
+logs/
 **/*.log
 **/*.log.*
 
-#vscode
-.vs_code/
+# Astro / Next specific
+export/
+public/assets/generated/
+generated/
 
-#config
+# ------------------------------
+# ⚙️ Config & environnement
+# ------------------------------
 .env
+.env.*
+!.env.example      # conserve modèle exemple
+*.local
+*.secret
+*.private
+config.json
 sqitch.conf
+credentials.json
+
+# ------------------------------
+# Sécurité / certificats / clés
+# ------------------------------
+*.pem
+*.crt
+*.key
+*.csr
+*.p12
+*.der
+*.jks
+*.keystore
+*.pfx
+
+# ------------------------------
+# Tests & outils
+# ------------------------------
+jest-cache/
+jest-test-results.json
+.vitest/
+cypress/screenshots/
+cypress/videos/
+playwright-report/
+allure-results/
+*.spec.ts
+*.spec.js
+*.test.ts
+*.test.js
+
+# ------------------------------
+# Docker / DevOps
+# ------------------------------
+.docker/
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.dev.yml
+*.pid
+*.seed
+*.tar
+*.gz
+
+# ------------------------------
+# Frameworks / outils divers
+# ------------------------------
+.DS_Store
+*.iml
+*.log
+*.sql
+*.sqlite
+*.db
+*.old
+*.orig
+
+# ------------------------------
+# GitHub / CI
+# ------------------------------
+*.tgz
+*.zip
+*.tar.gz
+*.7z
+*.tmp
+*.temp
+*.patch
+*.diff
+
+# ------------------------------
+# Assets / médias générés
+# ------------------------------
+*.webp
+*.avif
+*.psd
+*.ai
+*.xcf
+*.blend1
+*.blend
+*.tmp.*
+__MACOSX/
+Thumbs.db
+.cache-loader/
+*.map
+
+# ------------------------------
+# OS-level ignores (optional)
+# ------------------------------
+# Desktop.ini and OS artifacts
+Icon?
+ehthumbs.db
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+../next-env.d.ts
