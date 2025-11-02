@@ -1,0 +1,88 @@
+{
+  "basics": {
+    "name": "Anthony Berrué",
+    "label": "Software Architecture Expert / Project Lead Developer",
+    "location": "Dax, Nouvelle-Aquitaine (France)",
+    "email": "contact@tondomaine.fr",
+    "profiles": [
+      { "network": "GitHub", "url": "https://github.com/AnthonyBerrue" },
+      { "network": "LinkedIn", "url": "https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/" }
+    ],
+    "summary": "Software architect and full-stack developer combining technical expertise, DevOps mindset and UX awareness. Currently in a Master’s degree (2i Academy) and working at Potez Aéronautique, building secure, scalable and maintainable web platforms with Java 21 / Spring Boot 3, Angular 19, and Next.js 16, deployed via CI/CD pipelines and Keycloak OIDC."
+  },
+  "skills": [
+    { "name": "Languages & Frameworks", "keywords": ["Java 21", "Spring Boot 3.5", "Angular 19", "Next.js 16", "Node.js"] },
+    { "name": "Architecture & Security", "keywords": ["Microservices", "GraphQL BFF", "REST API", "Keycloak OIDC", "Clean Architecture"] },
+    { "name": "DevOps & Cloud", "keywords": ["Docker", "Kubernetes (k3d/EKS)", "GitHub Actions", "SonarQube", "Terraform", "AWS"] },
+    { "name": "Quality & UX", "keywords": ["SOLID / DRY / YAGNI", "CI/CD", "Testing & Code Security", "Accessibility (WCAG / RGAA)", "EcoIndex A/B", "Design System Tailwind v4 + shadcn/ui"] }
+  ],
+  "experience": [
+    {
+      "name": "Potez Aéronautique",
+      "position": "Application Developer / Software Project Lead (Apprenticeship)",
+      "startDate": "2023-02",
+      "summary": "Development and management of internal industrial tools (capacity planning, tool management) using Java / Spring Boot / Angular / Next.js with OIDC security and CI/CD pipelines.",
+      "highlights": [
+        "Microservice architecture (Spring Boot 3 + GraphQL BFF)",
+        "OIDC / SSO integration (Keycloak)",
+        "Angular 19 (front-end) & Next.js 16 (export static)",
+        "CI/CD GitHub Actions, Docker Compose / Kubernetes",
+        "Monitoring and Quality (SonarQube, k6, Prometheus)",
+        "Accessibility & Eco-Design (WCAG / EcoIndex)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "2i Academy",
+      "area": "Software Architecture & Development Expert",
+      "studyType": "Master (Bac +5)",
+      "startDate": "2024-09",
+      "endDate": "2026-06",
+      "summary": "Project management, audit, software lifecycle, testing & security, and technical leadership."
+    },
+    {
+      "institution": "Simplon Grand Ouest",
+      "area": "Application Designer-Developer (Java / Spring / Angular)",
+      "studyType": "Bachelor (Bac +3 / 4)",
+      "startDate": "2022-10",
+      "endDate": "2024-01",
+      "summary": "Web application design and development (front-end & back-end), testing and deployment automation."
+    },
+    {
+      "institution": "École O’Clock",
+      "area": "Full-Stack Web Developer (JavaScript / Node.js)",
+      "studyType": "Associate (Bac +2)",
+      "startDate": "2021-09",
+      "endDate": "2022-03",
+      "summary": "Intensive 700h training in JS stack (HTML/CSS/JS/Node/SQL/NoSQL/API)."
+    }
+  ],
+  "projects": [
+    {
+      "name": "ChargeCapa",
+      "summary": "Internal capacity and skills management platform for Potez Aéronautique.",
+      "url": "#",
+      "highlights": [
+        "Spring Boot 3 microservices + GraphQL BFF",
+        "Angular 19 UI + Design System",
+        "OIDC Authentication (Keycloak)",
+        "CI/CD GitHub Actions + Quality Analysis (SonarQube)"
+      ]
+    },
+    {
+      "name": "FindeyMusic",
+      "summary": "SaaS platform connecting musicians and event organizers, automating contracts and payments (GUSO/CDDU).",
+      "url": "#",
+      "highlights": [
+        "Next.js App Router + Tailwind v4 + shadcn/ui",
+        "Document automation and legal compliance flows",
+        "Monitoring / budget / GDPR compliance"
+      ]
+    }
+  ],
+  "languages": [
+    { "language": "French", "fluency": "Native" },
+    { "language": "English", "fluency": "Technical / Professional" }
+  ]
+}

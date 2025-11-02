@@ -1,0 +1,88 @@
+{
+  "basics": {
+    "name": "Anthony Berrué",
+    "label": "Chef de Projets Développement / Expert en Architecture Logicielle",
+    "location": "Dax (Nouvelle-Aquitaine, France)",
+    "email": "berrue.anthony@gmail.com",
+    "profiles": [
+      { "network": "GitHub", "url": "https://github.com/AnthonyBerrue" },
+      { "network": "LinkedIn", "url": "https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/" }
+    ],
+    "summary": "Chef de projets et développeur full-stack orienté architecture. Actuellement en alternance Bac+5 « Expert en Architecture & Développement Logiciel » (2i Academy) chez Potez Aéronautique, j’interviens sur la conception et le pilotage d’applications web industrielles (Java 21 / Spring Boot 3, Angular 19, Next.js 16) intégrant CI/CD, sécurité (Keycloak OIDC) et principes de qualité logicielle. Je combine expertise technique, rigueur DevOps et sens du design pour livrer des produits maintenables, performants et accessibles."
+  },
+  "skills": [
+    { "name": "Langages & Frameworks", "keywords": ["Java 21", "Spring Boot 3.5", "Angular 19", "Next.js 16", "Node.js"] },
+    { "name": "Architecture & Sécurité", "keywords": ["Microservices", "GraphQL BFF", "REST API", "Keycloak OIDC", "Clean Architecture"] },
+    { "name": "DevOps & Cloud", "keywords": ["Docker", "Kubernetes (k3d/EKS)", "GitHub Actions", "SonarQube", "Terraform", "AWS"] },
+    { "name": "Qualité & UX", "keywords": ["Tests Unitaires / Intégration", "SOLID / DRY / YAGNI", "CI/CD", "Accessibilité RGAA / WCAG", "EcoIndex A/B", "Design System Tailwind v4 + shadcn/ui"] }
+  ],
+  "experience": [
+    {
+      "name": "Potez Aéronautique",
+      "position": "Développeur d’applications / Chef de projets en alternance",
+      "startDate": "2023-02",
+      "summary": "Développement et pilotage de solutions internes (capacity planning, gestion des poinçons, traçabilité) en environnement industriel. Architecture full-stack Java / Angular / Next.js avec CI/CD et SSO.",
+      "highlights": [
+        "Conception d’une architecture microservices Spring Boot 3 (REST + GraphQL BFF)",
+        "Intégration de Keycloak (OIDC / RBAC / Realms)",
+        "Frontend Angular 19 (standalone) et Next.js (App Router, export statique)",
+        "Mise en place CI/CD GitHub Actions + Docker Compose / Kubernetes (k3d)",
+        "Monitoring : Prometheus / Grafana / SonarQube / k6",
+        "Accessibilité RGAA et EcoIndex A sur les écrans clés"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "2i Academy",
+      "area": "Expert en Architecture & Développement Logiciel",
+      "studyType": "Bac +5",
+      "startDate": "2024-09",
+      "endDate": "2026-06",
+      "summary": "Gestion complète du cycle de vie logiciel : audits, conception, pilotage, delivery et maintenance. Encadrement technique d’équipes de développement, sécurisation du code et maîtrise du Big Data et des architectures scalables."
+    },
+    {
+      "institution": "Simplon Grand Ouest",
+      "area": "Concepteur-Développeur d’Applications (Java / Spring / Angular)",
+      "studyType": "Bac +3 / 4",
+      "startDate": "2022-10",
+      "endDate": "2024-01",
+      "summary": "Conception et développement d’applications web complètes (front-end + back-end), base de données, tests et déploiement continu."
+    },
+    {
+      "institution": "École O’Clock",
+      "area": "Développeur Web Full-Stack JavaScript",
+      "studyType": "Bac +2",
+      "startDate": "2021-09",
+      "endDate": "2022-03",
+      "summary": "Formation intensive (700h) sur l’écosystème JavaScript : Node.js, Express, PostgreSQL, SQL/NoSQL et conception d’API data."
+    }
+  ],
+  "projects": [
+    {
+      "name": "ChargeCapa",
+      "summary": "Application interne de gestion des charges et compétences pour Potez Aéronautique.",
+      "url": "#",
+      "highlights": [
+        "Microservices Spring Boot + BFF GraphQL",
+        "Frontend Angular 19 + Design System",
+        "Authentification Keycloak OIDC",
+        "CI/CD GitHub Actions, qualité SonarQube"
+      ]
+    },
+    {
+      "name": "FindeyMusic",
+      "summary": "Plateforme SaaS de mise en relation musiciens / organisateurs, automatisant contrats CDDU / GUSO.",
+      "url": "#",
+      "highlights": [
+        "Next.js (App Router / export statique)",
+        "Automatisation des documents légaux et paiements",
+        "Monitoring / budgets / RGPD"
+      ]
+    }
+  ],
+  "languages": [
+    { "language": "Français", "fluency": "Natif" },
+    { "language": "Anglais", "fluency": "Technique / Professionnel" }
+  ]
+}
