@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     title: "Anthony Berrué — CV",
     description: "Static CV exported with Next.js",
     metadataBase: new URL("https://anthonyberrue.github.io"),
-    openGraph: { title: "Anthony Berrué — CV", images: ["/anthony-cv/public/avatar.jpeg"] },
-    icons: { icon: "/anthony-cv/app/favicon.ico" }
+    openGraph: { title: "Anthony Berrué — CV", images: ["/avatar.jpeg"] },
+    icons: { icon: "/favicon.ico" }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

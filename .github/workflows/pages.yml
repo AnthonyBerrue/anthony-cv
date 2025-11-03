@@ -21,24 +21,17 @@ jobs:
     name: Lint / Typecheck / JSON
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-
       - name: Install (CI, pas de scripts)
         run: npm ci --ignore-scripts --no-audit
-
       - name: Lint
         run: npm run lint
-
       - name: Typecheck
         run: npm run typecheck
-
       - name: Validate JSON content
         run: npm run check:json
 
@@ -46,28 +39,23 @@ jobs:
     name: Build & Upload artifact
     needs: quality
     runs-on: ubuntu-latest
-
+    env:
+      LIGHTNINGCSS_FORCE_WASM: "1"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
       - name: Ensure npm scripts are enabled
-        run: |
-          npm config set ignore-scripts false
-          echo "ignore-scripts=$(npm config get ignore-scripts)"
+        run: npm config set ignore-scripts false
 
       - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit
+        run: npm ci --no-audit
 
-      - name: Rebuild lightningcss binary
+      - name: Reinstall lightningcss native (best effort)
         run: |
-          npm rebuild lightningcss --foreground-scripts || true
           node node_modules/lightningcss/install.js || true
 
       - name: Cache Next.js build cache
