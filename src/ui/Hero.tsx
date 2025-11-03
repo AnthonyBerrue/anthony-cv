@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <header className="relative overflow-hidden rounded-b-3xl bg-gradient-to-br from-[#0d6efd] via-[#4c51bf] to-[#1e1b4b] text-white shadow-lg">
-            {/* Animated aurora background */}
+        <header className="sticky top-0 z-40 overflow-hidden rounded-b-3xl bg-gradient-to-br from-[#0d6efd] via-[#4c51bf] to-[#1e1b4b] text-white shadow-lg">
             <motion.div
                 aria-hidden="true"
                 className="absolute inset-0 opacity-50"
@@ -17,10 +16,8 @@ export default function Hero() {
                     backgroundSize: "200% 200%",
                 }}
             />
-
             <div className="relative z-10 container py-12 sm:py-16">
                 <div className="mx-auto max-w-2xl flex flex-col items-center text-center gap-4">
-                    {/* Portrait */}
                     <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl ring-4 ring-white/90 overflow-hidden shadow-xl">
                         <Image
                             src="/avatar.jpeg"
@@ -30,38 +27,14 @@ export default function Hero() {
                             sizes="128px"
                         />
                     </div>
-
-                    {/* Nom + Titre */}
                     <div>
                         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Anthony Berrué</h1>
                         <p className="text-lg text-white/90">Application Designer & Full-Stack Developer</p>
                     </div>
-
-                    {/* Boutons */}
                     <div className="mt-2 flex flex-wrap justify-center gap-3">
-                        <a
-                            className="px-4 py-2 rounded-lg bg-white text-[#0d6efd] font-medium shadow-sm hover:bg-neutral-100 transition"
-                            href="/cv.pdf"
-                            aria-label="Download CV PDF"
-                        >
-                            Download CV
-                        </a>
-                        <a
-                            className="px-4 py-2 rounded-lg bg-transparent border border-white/40 text-white hover:bg-white/10 transition"
-                            href="https://github.com/AnthonyBerrue"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            GitHub
-                        </a>
-                        <a
-                            className="px-4 py-2 rounded-lg bg-transparent border border-white/40 text-white hover:bg-white/10 transition"
-                            href="https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            LinkedIn
-                        </a>
+                        <a className="px-4 py-2 rounded-lg bg-white text-[#0d6efd] font-medium shadow-sm hover:bg-neutral-100 transition" href="/cv.pdf" aria-label="Download CV PDF">Download CV</a>
+                        <a className="px-4 py-2 rounded-lg bg-transparent border border-white/40 text-white hover:bg-white/10 transition" href="https://github.com/AnthonyBerrue" target="_blank" rel="noreferrer">GitHub</a>
+                        <a className="px-4 py-2 rounded-lg bg-transparent border border-white/40 text-white hover:bg-white/10 transition" href="https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/" target="_blank" rel="noreferrer">LinkedIn</a>
                     </div>
                 </div>
             </div>
