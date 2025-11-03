@@ -21,24 +21,17 @@ jobs:
     name: Lint / Typecheck / JSON
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-
       - name: Install (CI, pas de scripts)
         run: npm ci --ignore-scripts --no-audit
-
       - name: Lint
         run: npm run lint
-
       - name: Typecheck
         run: npm run typecheck
-
       - name: Validate JSON content
         run: npm run check:json
 
@@ -46,35 +39,28 @@ jobs:
     name: Build & Upload artifact
     needs: quality
     runs-on: ubuntu-latest
-
+    env:
+      LIGHTNINGCSS_SKIP_NATIVE: "1"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      - name: Ensure npm scripts are enabled
-        run: |
-          npm config set ignore-scripts false
-          echo "ignore-scripts=$(npm config get ignore-scripts)"
+      - name: Install deps (scripts autorisés)
+        run: npm ci --no-audit
 
-      - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit
-
-      - name: Rebuild lightningcss binary
+      - name: Sanity check lightningcss (WASM)
         run: |
-          npm rebuild lightningcss --foreground-scripts || true
-          node node_modules/lightningcss/install.js || true
+          node -e "console.log('env.LIGHTNINGCSS_SKIP_NATIVE=', process.env.LIGHTNINGCSS_SKIP_NATIVE)"
+          node -e "try{require('lightningcss');console.log('lightningcss OK (WASM)')}catch(e){console.error(e);process.exit(1)}"
 
       - name: Cache Next.js build cache
         uses: actions/cache@v4
         with:
           path: .next/cache
-          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json', '**/*.[tj]s', '**/*.[tj]sx', '**/*.css') }}
+          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json','**/*.[tj]s','**/*.[tj]sx','**/*.css') }}
           restore-keys: |
             ${{ runner.os }}-next-
 
