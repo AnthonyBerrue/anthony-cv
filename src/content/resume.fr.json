@@ -72,7 +72,7 @@
     },
     {
       "name": "FindeyMusic",
-      "summary": "Plateforme SaaS de mise en relation musiciens / organisateurs, automatisant contrats CDDU / GUSO.",
+      "summary": "Plateforme SaaS pour musiciens.",
       "url": "#",
       "highlights": [
         "Next.js (App Router / export statique)",

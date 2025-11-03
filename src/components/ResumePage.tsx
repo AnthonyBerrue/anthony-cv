@@ -8,19 +8,27 @@ import SkillPill from "@/ui/SkillPill";
 import Timeline from "@/ui/Timeline";
 import Contact from "@/ui/Contact";
 import type { Resume } from "@/types/resume";
-import {toEducationItems, toExperienceItems} from "@/lib/toTimelineItems";
+import { toEducationItems, toExperienceItems } from "@/lib/toTimelineItems";
+
+export type Labels = {
+    about: string;
+    basedInPrefix: string;
+    contact: string;
+    switch: string;
+    skills: string;
+    projects: string;
+    experience: string;
+    education: string;
+    contactSection: string;
+};
 
 type Props = {
     resume: Resume;
     switchHref: string;
-    switchLabel: string;
+    labels: Labels;
 };
 
-export default function ResumePage({
-                                       resume,
-                                       switchHref,
-                                       switchLabel,
-                                   }: Readonly<Props>) {
+export default function ResumePage({ resume, switchHref, labels }: Readonly<Props>) {
     const { basics, skills, projects, experience = [], education = [] } = resume;
 
     const expItems = toExperienceItems(experience);
@@ -30,23 +38,19 @@ export default function ResumePage({
         <>
             <Hero />
             <main id="main">
-                {/* À propos */}
-                <Section title="À propos" lead={basics.summary}>
+                {/* À propos / About */}
+                <Section title={labels.about} lead={basics.summary}>
                     <p className="mt-2">
-                        Basé à {basics.location}. Contact:{" "}
-                        <a className="link" href={`mailto:${basics.email}`}>
-                            {basics.email}
-                        </a>.
+                        {labels.basedInPrefix} {basics.location}. {labels.contact}:{" "}
+                        <a className="link" href={`mailto:${basics.email}`}>{basics.email}</a>.
                     </p>
                     <p className="mt-2">
-                        <Link className="link" href={switchHref}>
-                            {switchLabel}
-                        </Link>
+                        <Link className="link" href={switchHref}>{labels.switch}</Link>
                     </p>
                 </Section>
 
-                {/* Compétences */}
-                <Section title="Compétences">
+                {/* Compétences / Skills */}
+                <Section title={labels.skills}>
                     <div className="space-y-5">
                         {skills.map((s) => (
                             <div key={s.name}>
@@ -61,8 +65,8 @@ export default function ResumePage({
                     </div>
                 </Section>
 
-                {/* Projets */}
-                <Section title="Projets">
+                {/* Projets / Projects */}
+                <Section title={labels.projects}>
                     <div className="grid gap-4 sm:grid-cols-2">
                         {projects.map((p) => (
                             <Card key={p.name} heading={p.name} sub={p.summary} href={p.url} />
@@ -70,18 +74,18 @@ export default function ResumePage({
                     </div>
                 </Section>
 
-                {/* Expérience */}
-                <Section title="Expérience">
-                    <Timeline items={expItems} ariaLabel="Expérience professionnelle" />
+                {/* Expérience / Experience */}
+                <Section title={labels.experience}>
+                    <Timeline items={expItems} ariaLabel={labels.experience} />
                 </Section>
 
-                {/* Formation */}
-                <Section title="Formation">
-                    <Timeline items={eduItems} ariaLabel="Formation" />
+                {/* Formation / Education */}
+                <Section title={labels.education}>
+                    <Timeline items={eduItems} ariaLabel={labels.education} />
                 </Section>
 
                 {/* Contact */}
-                <Section title="Contact">
+                <Section title={labels.contactSection}>
                     <Contact email={basics.email} profiles={basics.profiles} />
                 </Section>
             </main>
