@@ -57,8 +57,18 @@ jobs:
           node-version: "20"
           cache: "npm"
 
+      - name: Ensure npm scripts are enabled
+        run: |
+          npm config set ignore-scripts false
+          echo "ignore-scripts=$(npm config get ignore-scripts)"
+
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
+
+      - name: Rebuild lightningcss binary
+        run: |
+          npm rebuild lightningcss --foreground-scripts || true
+          node node_modules/lightningcss/install.js || true
 
       - name: Cache Next.js build cache
         uses: actions/cache@v4
