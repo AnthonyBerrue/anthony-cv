@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -18,9 +20,6 @@ jobs:
   quality:
     name: Lint / Typecheck / JSON
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,8 +27,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install (CI, pas de scripts)
         run: npm ci --ignore-scripts --no-audit
@@ -44,14 +43,9 @@ jobs:
         run: npm run check:json
 
   build:
-    if: github.ref == 'refs/heads/main'
+    name: Build & Upload artifact
     needs: quality
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - name: Checkout
@@ -60,13 +54,21 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm ci --ignore-scripts --no-audit
+        run: npm ci --prefer-offline --no-audit
 
-      - name: Build project
+      - name: Cache Next.js build cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json', '**/*.[tj]s', '**/*.[tj]sx', '**/*.css') }}
+          restore-keys: |
+            ${{ runner.os }}-next-
+
+      - name: Build (next build && next export)
         run: npm run build
 
       - name: Configure Pages
@@ -76,20 +78,35 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+          name: pages-${{ github.run_id }}
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    name: Deploy (production)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    permissions:
-      pages: write
-      id-token: write
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: pages-${{ github.run_id }}
+
+  preview:
+    name: Deploy Preview (pull_request)
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Preview to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: pages-${{ github.run_id }}
+          preview: true
