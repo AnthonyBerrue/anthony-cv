@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "postinstall": "node -e \"try{require('lightningcss/node');process.exit(0)}catch(e){process.exit(1)}\" || npm rebuild lightningcss --foreground-scripts",
     "check:json": "node -e \"const fs=require('fs');['src/content/resume.fr.json','src/content/resume.en.json'].forEach(p=>JSON.parse(fs.readFileSync(p,'utf8')));console.log('✓ JSON OK')\""
   },
   "dependencies": {
