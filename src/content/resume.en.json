@@ -3,7 +3,7 @@
     "name": "Anthony Berrué",
     "label": "Software Architecture Expert / Project Lead Developer",
     "location": "Dax, Nouvelle-Aquitaine (France)",
-    "email": "contact@tondomaine.fr",
+    "email": "berrue.anthony@gmail.com",
     "profiles": [
       { "network": "GitHub", "url": "https://github.com/AnthonyBerrue" },
       { "network": "LinkedIn", "url": "https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/" }
@@ -50,7 +50,7 @@
       "summary": "Web application design and development (front-end & back-end), testing and deployment automation."
     },
     {
-      "institution": "École O’Clock",
+      "institution": "School O’Clock",
       "area": "Full-Stack Web Developer (JavaScript / Node.js)",
       "studyType": "Associate (Bac +2)",
       "startDate": "2021-09",
@@ -72,7 +72,7 @@
     },
     {
       "name": "FindeyMusic",
-      "summary": "SaaS platform connecting musicians and event organizers, automating contracts and payments (GUSO/CDDU).",
+      "summary": "SaaS platform for musicians.",
       "url": "#",
       "highlights": [
         "Next.js App Router + Tailwind v4 + shadcn/ui",

@@ -3,13 +3,19 @@ import type { Metadata } from "next";
 import SkipLink from "@/ui/SkipLink";
 import React from "react";
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
     title: "Anthony Berrué — CV",
     description: "Static CV exported with Next.js",
     metadataBase: new URL("https://anthonyberrue.github.io"),
-    openGraph: { title: "Anthony Berrué — CV", images: ["/anthony-cv/avatar.jpeg"] },
-    icons: { icon: "/anthony-cv/favicon.ico" }
+    openGraph: {
+        title: "Anthony Berrué — CV",
+        images: [`${prefix}/avatar.jpeg`],
+    },
+    icons: { icon: `${prefix}/favicon.ico` },
 };
+
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
