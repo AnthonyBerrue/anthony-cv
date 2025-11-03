@@ -21,24 +21,17 @@ jobs:
     name: Lint / Typecheck / JSON
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-
       - name: Install (CI, pas de scripts)
         run: npm ci --ignore-scripts --no-audit
-
       - name: Lint
         run: npm run lint
-
       - name: Typecheck
         run: npm run typecheck
-
       - name: Validate JSON content
         run: npm run check:json
 
@@ -46,35 +39,38 @@ jobs:
     name: Build & Upload artifact
     needs: quality
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      - name: Ensure npm scripts are enabled
-        run: |
-          npm config set ignore-scripts false
-          echo "ignore-scripts=$(npm config get ignore-scripts)"
+      - name: Install deps
+        run: npm ci --no-audit
 
-      - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit
-
-      - name: Rebuild lightningcss binary
+      - name: Ensure lightningcss native binary
+        shell: bash
         run: |
-          npm rebuild lightningcss --foreground-scripts || true
-          node node_modules/lightningcss/install.js || true
+          set -e
+          if node -e "require('lightningcss/node'); console.log('LightningCSS native OK')" >/dev/null 2>&1; then
+            echo "LightningCSS native already present."
+          else
+            echo "LightningCSS native missing. Running installer..."
+            node node_modules/lightningcss/node/install.js || true
+            # Recheck (non bloquant, mais log utile)
+            if node -e "require('lightningcss/node'); console.log('LightningCSS native OK after install')" >/dev/null 2>&1; then
+              echo "LightningCSS native installed."
+            else
+              echo "Native still missing; build will rely on WASM fallback if available."
+            fi
+          fi
 
       - name: Cache Next.js build cache
         uses: actions/cache@v4
         with:
           path: .next/cache
-          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json', '**/*.[tj]s', '**/*.[tj]sx', '**/*.css') }}
+          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json','**/*.[tj]s','**/*.[tj]sx','**/*.css') }}
           restore-keys: |
             ${{ runner.os }}-next-
 
