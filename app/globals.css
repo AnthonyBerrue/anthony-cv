@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
-/* 🎯 Palette cohérente avec le Hero */
 @theme {
-    --color-primary: #0d6efd;        /* bleu hero */
+    --color-primary: #0d6efd;
     --color-primary-600: #0b5ed7;
-    --color-secondary: #4c51bf;      /* indigo hero */
-    --color-deep: #1e1b4b;           /* violet profond hero */
+    --color-secondary: #4c51bf;
+    --color-deep: #1e1b4b;
     --radius-card: 14px;
 }
 
