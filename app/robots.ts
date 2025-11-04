@@ -1,10 +1,3 @@
-import type { MetadataRoute } from 'next';
-
-export const dynamic = 'force-static';
-
-export default function robots(): MetadataRoute.Robots {
-    return {
-        rules: { userAgent: '*', allow: '/' },
-        sitemap: 'https://anthonyberrue.github.io/anthony-cv/sitemap.xml',
-    };
+export default function robots() {
+    return { rules: { userAgent: "*", allow: "/" }, sitemap: "https://anthonyberrue.github.io/sitemap.xml" };
 }
