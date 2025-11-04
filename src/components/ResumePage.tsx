@@ -37,7 +37,7 @@ export default function ResumePage({ resume, switchHref, labels }: Readonly<Prop
     return (
         <>
             <Hero />
-            <main id="main">
+            <main id="main" className="relative z-10">
                 {/* À propos / About */}
                 <Section title={labels.about} lead={basics.summary}>
                     <p className="mt-2">

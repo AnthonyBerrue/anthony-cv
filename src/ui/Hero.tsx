@@ -7,10 +7,10 @@ const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Hero() {
     return (
-        <header className="top-0 z-40 overflow-hidden rounded-b-3xl bg-gradient-to-br from-[#0d6efd] via-[#4c51bf] to-[#1e1b4b] text-white shadow-lg">
+        <header className="relative top-0 z-40 overflow-hidden rounded-b-3xl bg-gradient-to-br from-[#0d6efd] via-[#4c51bf] to-[#1e1b4b] text-white shadow-lg">
             <motion.div
                 aria-hidden="true"
-                className="absolute inset-0 opacity-50"
+                className="absolute inset-0 -z-10 opacity-50 pointer-events-none"
                 animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 style={{
@@ -24,7 +24,7 @@ export default function Hero() {
                     <div className="relative rounded-2xl ring-4 ring-white/90 overflow-hidden shadow-xl"
                          style={{ width: 128, height: 128 }}>
                         <Image
-                            src={`${prefix}/avatar.webp`}
+                            src="/avatar.webp"
                             alt="Portrait of Anthony Berrué"
                             width={128} height={128}
                             priority
@@ -39,7 +39,7 @@ export default function Hero() {
                     <div className="mt-2 flex flex-wrap justify-center gap-3">
 
                         <a
-                            href={`${prefix}/cv.pdf`}
+                            href="/cv.pdf"
                             download
                             className="px-4 py-2 rounded-lg bg-white text-[#0d6efd] font-medium shadow-sm hover:bg-neutral-100 transition"
                             aria-label="Download CV PDF"
