@@ -49,11 +49,10 @@ jobs:
       - name: Install deps (npm ci)
         run: npm ci --no-audit
 
-      - name: Rebuild lightningcss native binary
+      - name: Rebuild lightningcss native binary (optional)
         run: |
           node -e "try{require('lightningcss/node');console.log('LightningCSS native already present')}catch(e){process.exit(1)}" \
           || npm rebuild lightningcss --foreground-scripts --verbose
-
           node -e "try{require('lightningcss/node');console.log('LightningCSS native OK after rebuild')}catch(e){console.warn('Still no native; will rely on WASM if possible')}"
 
       - name: Cache Next.js build cache
@@ -67,30 +66,24 @@ jobs:
       - name: Build (next build)
         run: npm run build
 
-      - name: Configure Pages
-        if: github.event_name == 'push'
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - name: Add .nojekyll
+        run: echo > out/.nojekyll
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
           name: pages-${{ github.run_id }}
 
   deploy:
+    name: Deploy (production)
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     steps:
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
