@@ -8,27 +8,35 @@
       { "network": "GitHub", "url": "https://github.com/AnthonyBerrue" },
       { "network": "LinkedIn", "url": "https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/" }
     ],
-    "summary": "Software architect and full-stack developer combining technical expertise, DevOps mindset and UX awareness. Currently in a Master’s degree (2i Academy) and working at Potez Aéronautique, building secure, scalable and maintainable web platforms with Java 21 / Spring Boot 3, Angular 19, and Next.js 16, deployed via CI/CD pipelines and Keycloak OIDC."
+    "summary": "Software architect and full-stack developer combining technical expertise, DevOps mindset and UX awareness. Currently in a Master’s degree (2i Academy) and working at Potez Aéronautique, building secure, scalable and maintainable web platforms, deployed via CI/CD pipelines and Keycloak OIDC."
   },
   "skills": [
-    { "name": "Languages & Frameworks", "keywords": ["Java 21", "Spring Boot 3.5", "Angular 19", "Next.js 16", "Node.js"] },
+    { "name": "Languages & Frameworks", "keywords": ["Java 21", "Spring Boot 3.5 (Maven ou Gradle)", "Angular 19", "Next.js 16", "Node.js"] },
     { "name": "Architecture & Security", "keywords": ["Microservices", "GraphQL BFF", "REST API", "Keycloak OIDC", "Clean Architecture"] },
     { "name": "DevOps & Cloud", "keywords": ["Docker", "Kubernetes (k3d/EKS)", "GitHub Actions", "SonarQube", "Terraform", "AWS"] },
-    { "name": "Quality & UX", "keywords": ["SOLID / DRY / YAGNI", "CI/CD", "Testing & Code Security", "Accessibility (WCAG / RGAA)", "EcoIndex A/B", "Design System Tailwind v4 + shadcn/ui"] }
+    { "name": "Quality & UX", "keywords": ["SOLID / DRY / YAGNI", "CI/CD", "Testing & Code Security", "Accessibility (WCAG / RGAA)", "Green Coding", "Design System Tailwind v4 + shadcn/ui"] },
+    { "name": "Design & Media", "keywords": ["Figma", "Adobe InDesign", "Adobe Illustrator", "OBS Studio"] }
   ],
   "experience": [
     {
       "name": "Potez Aéronautique",
-      "position": "Application Developer / Software Project Lead (Apprenticeship)",
+      "position": "Full-Stack Application Developer (Java / Angular) / Software Project Lead (Apprenticeship)",
       "startDate": "2023-02",
-      "summary": "Development and management of internal industrial tools (capacity planning, tool management) using Java / Spring Boot / Angular / Next.js with OIDC security and CI/CD pipelines.",
+      "endDate": "2025-12",
+      "summary": "Design, development and maintenance of internal applications for the aeronautical industry, focused on capacity management, quality tracking and production supervision. Involvement across the full project lifecycle from requirements and feasibility to delivery in a Java / Spring Boot / Angular environment, with Docker-based CI/CD pipelines on Azure DevOps.",
       "highlights": [
-        "Microservice architecture (Spring Boot 3 + GraphQL BFF)",
-        "OIDC / SSO integration (Keycloak)",
-        "Angular 19 (front-end) & Next.js 16 (export static)",
-        "CI/CD GitHub Actions, Docker Compose / Kubernetes",
-        "Monitoring and Quality (SonarQube, k6, Prometheus)",
-        "Accessibility & Eco-Design (WCAG / EcoIndex)"
+        "Drafting of functional and technical specifications (cahiers des charges)",
+        "Feasibility studies, RIO budgeting and executive-level presentations",
+        "Full-stack development with Java 21 / Spring Boot 3 / Angular 19",
+        "Build management and packaging with Maven",
+        "Setup and maintenance of CI/CD pipelines (Azure DevOps)",
+        "Containerization and deployment via Docker",
+        "Design and integration of REST and GraphQL APIs",
+        "Main projects:",
+        "• ChargeCapa | Collaborative workload and capacity management tool",
+        "• Poinçons Management | Quality control and traceability of tooling for aircraft parts",
+        "• RTTC | Real-time management and supervision of assembly line operators",
+        "Ensured quality, accessibility (RGAA) and EcoIndex performance compliance"
       ]
     }
   ],
@@ -38,7 +46,7 @@
       "area": "Software Architecture & Development Expert",
       "studyType": "Master (Bac +5)",
       "startDate": "2024-09",
-      "endDate": "2026-06",
+      "endDate": "2025-12",
       "summary": "Project management, audit, software lifecycle, testing & security, and technical leadership."
     },
     {
@@ -56,6 +64,14 @@
       "startDate": "2021-09",
       "endDate": "2022-03",
       "summary": "Intensive 700h training in JS stack (HTML/CSS/JS/Node/SQL/NoSQL/API)."
+    },
+    {
+      "institution": "EEGP – École supérieure d'Arts Appliqués et Design",
+      "area": "Preparatory program (MANAA), Graphic Design",
+      "studyType": "Foundation / Preparatory year",
+      "startDate": "2008",
+      "endDate": "2009",
+      "summary": "Preparation for art schools: drawing, composition, typography, color theory, design methodology."
     }
   ],
   "projects": [
@@ -65,9 +81,31 @@
       "url": "#",
       "highlights": [
         "Spring Boot 3 microservices + GraphQL BFF",
-        "Angular 19 UI + Design System",
+        "Angular 19 front-end + in-house Design System",
         "OIDC Authentication (Keycloak)",
-        "CI/CD GitHub Actions + Quality Analysis (SonarQube)"
+        "CI/CD Azure DevOps + SonarQube Quality Analysis"
+      ]
+    },
+    {
+      "name": "Poinçons Management",
+      "summary": "Internal application for quality tracking and tooling traceability in aeronautical production.",
+      "url": "#",
+      "highlights": [
+        "Spring Boot 3 + Angular 19 stack",
+        "Quality flow management and compliance control",
+        "Tooling traceability through dynamic status workflow",
+        "Dockerized deployment and CI/CD via Azure DevOps"
+      ]
+    },
+    {
+      "name": "RTTC",
+      "summary": "Internal platform for real-time operator management and assembly line supervision.",
+      "url": "#",
+      "highlights": [
+        "Modular and scalable Java / Angular architecture",
+        "Live operator task tracking and performance indicators",
+        "Real-time production dashboard for line supervision",
+        "Docker + CI/CD pipelines with Azure DevOps"
       ]
     },
     {

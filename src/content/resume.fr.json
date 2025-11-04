@@ -8,27 +8,35 @@
       { "network": "GitHub", "url": "https://github.com/AnthonyBerrue" },
       { "network": "LinkedIn", "url": "https://www.linkedin.com/in/anthony-berru%C3%A9-873879169/" }
     ],
-    "summary": "Chef de projets et développeur full-stack orienté architecture. Actuellement en alternance Bac+5 « Expert en Architecture & Développement Logiciel » (2i Academy) chez Potez Aéronautique, j’interviens sur la conception et le pilotage d’applications web industrielles (Java 21 / Spring Boot 3, Angular 19, Next.js 16) intégrant CI/CD, sécurité (Keycloak OIDC) et principes de qualité logicielle. Je combine expertise technique, rigueur DevOps et sens du design pour livrer des produits maintenables, performants et accessibles."
+    "summary": "Chef de projets et développeur full-stack orienté architecture. Actuellement en alternance Bac+5 « Expert en Architecture & Développement Logiciel » (2i Academy) chez Potez Aéronautique, j’interviens sur la conception et le pilotage d’applications web industrielles  intégrant CI/CD, sécurité et principes de qualité logicielle. Je combine expertise technique, rigueur DevOps et sens du design pour livrer des produits maintenables, performants et accessibles."
   },
   "skills": [
-    { "name": "Langages & Frameworks", "keywords": ["Java 21", "Spring Boot 3.5", "Angular 19", "Next.js 16", "Node.js"] },
+    { "name": "Langages & Frameworks", "keywords": ["Java 21", "Spring Boot 3.5 (Maven or Gradle)", "Angular 19", "Next.js 16", "Node.js"] },
     { "name": "Architecture & Sécurité", "keywords": ["Microservices", "GraphQL BFF", "REST API", "Keycloak OIDC", "Clean Architecture"] },
     { "name": "DevOps & Cloud", "keywords": ["Docker", "Kubernetes (k3d/EKS)", "GitHub Actions", "SonarQube", "Terraform", "AWS"] },
-    { "name": "Qualité & UX", "keywords": ["Tests Unitaires / Intégration", "SOLID / DRY / YAGNI", "CI/CD", "Accessibilité RGAA / WCAG", "EcoIndex A/B", "Design System Tailwind v4 + shadcn/ui"] }
+    { "name": "Qualité & UX", "keywords": ["Tests Unitaires / Intégration", "SOLID / DRY / YAGNI", "CI/CD", "Accessibilité RGAA / WCAG", "Green Code", "Design System Tailwind v4 + shadcn/ui"] },
+    { "name": "Design & Média", "keywords": ["Figma", "Adobe InDesign", "Adobe Illustrator", "OBS Studio"] }
   ],
   "experience": [
     {
       "name": "Potez Aéronautique",
-      "position": "Développeur d’applications / Chef de projets en alternance",
+      "position": "Développeur d’applications full-stack (Java / Angular) / Chef de projets en alternance",
       "startDate": "2023-02",
-      "summary": "Développement et pilotage de solutions internes (capacity planning, gestion des poinçons, traçabilité) en environnement industriel. Architecture full-stack Java / Angular / Next.js avec CI/CD et SSO.",
+      "endDate": "2025-12",
+      "summary": "Conception, développement et maintenance de solutions internes pour l’industrie aéronautique, centrées sur la gestion des capacités, la qualité et le pilotage de production. Interventions sur plusieurs projets stratégiques en environnement Java / Spring Boot / Angular, avec intégration DevOps, conteneurisation Docker et pilotage méthodologique complet (analyse, conception, déploiement).",
       "highlights": [
-        "Conception d’une architecture microservices Spring Boot 3 (REST + GraphQL BFF)",
-        "Intégration de Keycloak (OIDC / RBAC / Realms)",
-        "Frontend Angular 19 (standalone) et Next.js (App Router, export statique)",
-        "Mise en place CI/CD GitHub Actions + Docker Compose / Kubernetes (k3d)",
-        "Monitoring : Prometheus / Grafana / SonarQube / k6",
-        "Accessibilité RGAA et EcoIndex A sur les écrans clés"
+        "Rédaction de cahiers des charges et études de faisabilité fonctionnelles et techniques",
+        "Participation aux budgets RIO et présentations en comité d’exécution",
+        "Développement full-stack Java 21 / Spring Boot 3 / Angular 19",
+        "Builds et packaging via Maven",
+        "Mise en place et maintenance des pipelines CI/CD (Azure DevOps)",
+        "Conteneurisation et orchestration via Docker",
+        "Conception et intégration d’API REST et GraphQL",
+        "Projets principaux :",
+        "• ChargeCapa | Outil de planification et gestion de charge collaborateurs",
+        "• Poinçons Management | Suivi qualité et traçabilité des poinçons sur pièces aéronautiques",
+        "• RTTC | Management des opérateurs et supervision des chaînes d’assemblage",
+        "Veille à la conformité qualité, accessibilité et performance (EcoIndex, RGAA)"
       ]
     }
   ],
@@ -38,7 +46,7 @@
       "area": "Expert en Architecture & Développement Logiciel",
       "studyType": "Bac +5",
       "startDate": "2024-09",
-      "endDate": "2026-06",
+      "endDate": "2025-12",
       "summary": "Gestion complète du cycle de vie logiciel : audits, conception, pilotage, delivery et maintenance. Encadrement technique d’équipes de développement, sécurisation du code et maîtrise du Big Data et des architectures scalables."
     },
     {
@@ -56,6 +64,14 @@
       "startDate": "2021-09",
       "endDate": "2022-03",
       "summary": "Formation intensive (700h) sur l’écosystème JavaScript : Node.js, Express, PostgreSQL, SQL/NoSQL et conception d’API data."
+    },
+    {
+      "institution": "EEGP – École supérieure d'Arts Appliqués et Design",
+      "area": "Préparation à l’entrée aux écoles d’art (MANAA) — Design graphique",
+      "studyType": "Année préparatoire",
+      "startDate": "2008",
+      "endDate": "2009",
+      "summary": "Fondamentaux du design graphique : dessin, typographie, couleurs, mise en page, méthodologie créative."
     }
   ],
   "projects": [
@@ -64,10 +80,32 @@
       "summary": "Application interne de gestion des charges et compétences pour Potez Aéronautique.",
       "url": "#",
       "highlights": [
-        "Microservices Spring Boot + BFF GraphQL",
-        "Frontend Angular 19 + Design System",
+        "Architecture microservices Spring Boot 3 + BFF GraphQL",
+        "Frontend Angular 19 + Design System maison",
         "Authentification Keycloak OIDC",
-        "CI/CD GitHub Actions, qualité SonarQube"
+        "CI/CD Azure DevOps + analyse qualité SonarQube"
+      ]
+    },
+    {
+      "name": "Poinçons Management",
+      "summary": "Application interne de gestion, suivi qualité et traçabilité des poinçons sur pièces aéronautiques.",
+      "url": "#",
+      "highlights": [
+        "Spring Boot 3 + Angular 19",
+        "Suivi des flux qualité / conformité / outillage",
+        "Traçabilité des poinçons via interface intuitive et statuts dynamiques",
+        "CI/CD Azure DevOps + conteneurisation Docker"
+      ]
+    },
+    {
+      "name": "RTTC",
+      "summary": "Plateforme interne de management et supervision des opérateurs sur chaînes d’assemblage aéronautique.",
+      "url": "#",
+      "highlights": [
+        "Architecture Java / Angular modulaire et scalable",
+        "Suivi en temps réel des tâches opérateurs",
+        "Gestion des priorités et indicateurs de performance",
+        "Intégration Docker + CI/CD Azure DevOps"
       ]
     },
     {

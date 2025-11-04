@@ -1,17 +1,9 @@
-import type { NextConfig } from 'next';
-
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'anthony-cv';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    output: 'export',
-    basePath: isProd ? `/${repoName}` : '',
-    assetPrefix: isProd ? `/${repoName}/` : undefined,
+    output: "export",
     images: { unoptimized: true },
     trailingSlash: true,
-    env: {
-        NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : '',
-    },
 };
 
 export default nextConfig;
