@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export default function Hero() {
     return (
         <header className="relative top-0 z-40 overflow-hidden rounded-b-3xl bg-gradient-to-br from-[#0d6efd] via-[#4c51bf] to-[#1e1b4b] text-white shadow-lg">
